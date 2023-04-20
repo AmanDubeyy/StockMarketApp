@@ -40,7 +40,7 @@ fun StockChart(
     }
     Canvas(modifier = modifier) {
         val spacePerHour = (size.width - spacing) / infos.size
-        (0 until infos.size - 1 step 2).forEach { i ->
+        (0 until infos.size - 0 step 2).forEach { i ->
             val info = infos[i]
             val hour = info.date.hour
             drawContext.canvas.nativeCanvas.apply {
