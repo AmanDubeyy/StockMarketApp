@@ -18,7 +18,7 @@ import kotlin.math.roundToInt
 fun StockChart(
     infos: List<IntraDayInfo> = emptyList(),
     modifier: Modifier = Modifier,
-    graphColor: Color = Color.Green
+    graphColor: Color = Color.Red
 ) {
     val spacing = 100f
     val transparentGraphColor = remember {
