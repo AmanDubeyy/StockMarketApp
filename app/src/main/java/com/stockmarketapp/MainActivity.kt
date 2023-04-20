@@ -8,8 +8,8 @@ import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Surface
 import androidx.compose.ui.Modifier
 import com.ramcosta.composedestinations.DestinationsNavHost
+import com.stockmarketapp.presentation.NavGraphs
 import com.stockmarketapp.presentation.company_listings.CompanyListingScreen
-import com.stockmarketapp.presentation.company_listings.NavGraphs
 import com.stockmarketapp.ui.theme.StockMarketAppTheme
 import dagger.hilt.android.AndroidEntryPoint
 

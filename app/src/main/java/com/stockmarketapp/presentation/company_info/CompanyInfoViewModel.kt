@@ -20,11 +20,12 @@ class CompanyInfoViewModel @Inject constructor(
     private val repository: StockRepository
 ): ViewModel() {
 
-    private var state by mutableStateOf(CompanyInfoState())
+    var state by mutableStateOf(CompanyInfoState())
 
     init{
         viewModelScope.launch {
             val symbol = savedStateHandle.get<String>("symbol") ?: return@launch
+
             state = state.copy(isLoading = true)
             val companyInfoResult = async {  repository.getCompanyInfo(symbol)}
             val intraDayInfoResult = async { repository.getIntraDayInfo(symbol)}
@@ -68,5 +69,4 @@ class CompanyInfoViewModel @Inject constructor(
             }
         }
     }
-
 }

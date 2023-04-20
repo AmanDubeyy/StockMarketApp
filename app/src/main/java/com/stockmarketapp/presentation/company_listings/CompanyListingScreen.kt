@@ -17,6 +17,8 @@ import com.google.accompanist.swiperefresh.SwipeRefresh
 import com.google.accompanist.swiperefresh.rememberSwipeRefreshState
 import com.ramcosta.composedestinations.annotation.Destination
 import com.ramcosta.composedestinations.navigation.DestinationsNavigator
+import com.stockmarketapp.presentation.company_info.CompanyInfoScreen
+import com.stockmarketapp.presentation.destinations.CompanyInfoScreenDestination
 
 @Composable
 @Destination(start = true)
@@ -25,7 +27,6 @@ fun CompanyListingScreen(
     vm : CompanyListingsViewModel = hiltViewModel()
 ) {
     val state = vm.state
-
     val swipeRefreshState = rememberSwipeRefreshState(
         isRefreshing = state.isRefreshing
     )
@@ -63,7 +64,9 @@ fun CompanyListingScreen(
                         modifier = Modifier
                             .fillMaxWidth()
                             .clickable {
-                                //Navigate
+                                navigator.navigate(
+                                    CompanyInfoScreenDestination(symbol = company.symbol)
+                                )
                             }
                             .padding(16.dp)
                     )
